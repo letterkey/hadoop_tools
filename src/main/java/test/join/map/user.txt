@@ -1,0 +1,4 @@
+1       张三    hubei 
+3       王五    tianjin 
+4       赵六    guangzhou 
+2       李四    beijing 

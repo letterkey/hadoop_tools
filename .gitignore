@@ -1,0 +1,12 @@
+*.class
+*.jar
+*.war
+*.ear
+.classpath
+.settings
+.project
+target
+.fatjar
+
+hs_err_pid*
+

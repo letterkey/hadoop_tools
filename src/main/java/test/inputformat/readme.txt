@@ -1,0 +1,12 @@
+自定义输入格式：
+1.继承FileInputFormat父类
+2.重写重写getInputSplits方法：用于确定输入分片 继承FileInputFormat 则可以使用其默认的分片方法
+3.重写createRecordRead方法：针对数据如何读取的类，定义输入文件格式，其实也就是定义此类
+
+这里主要是两个函数，initial和nextKeyValue:
+initial主要用于初始化，包括打开和读取文件，定义读取的进度等；
+
+nextKeyValue则是针对每行数据（由于这里使用的是LineReader，
+所以每次读取的是一行，这里定义不同的读取方式，可以读取不同的内容），产生对应的key和value对，
+如果没有报错，则返回true。这里可以看到设置了一条规则，如果输入数据是以ignore开始的话就忽略，
+同时每行只取得逗号前后的数据分别作为key和value。
